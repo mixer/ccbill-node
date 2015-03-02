@@ -1,0 +1,34 @@
+{
+  "name": "ccbill",
+  "version": "0.0.1",
+  "description": "Gateway for CCBill payment processing",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha test --recursive && node node_modules/jshint/bin/jshint lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MCProHosting/ccbill-node.git"
+  },
+  "keywords": [
+    "ccbill",
+    "payment",
+    "processing",
+    "gateway",
+    "cc",
+    "credit",
+    "card"
+  ],
+  "author": "Connor Peet <connor@connorpeet.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MCProHosting/ccbill-node/issues"
+  },
+  "homepage": "https://github.com/MCProHosting/ccbill-node",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "jshint": "^2.6.3",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  }
+}
