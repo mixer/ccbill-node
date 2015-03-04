@@ -24,5 +24,5 @@ app.post('/payment/confirm', function (req, res) {
 });
 
 app.get('/payment/start', function (req, res) {
-    res.send('Go to this address to purchase: ' + form.build(CCbill.Builder.Url));
+    res.send('Go to this address to purchase: ' + form.build(CCbill.Build.Url));
 });
