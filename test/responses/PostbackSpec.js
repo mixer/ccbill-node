@@ -18,7 +18,7 @@ describe('postback response', function () {
     });
 
     it('sets status when successful', function () {
-        var res = new Postback(client, {});
+        var res = new Postback(client, { denialId: '' });
         expect(res.isSuccessful()).to.be.true;
         expect(res.isFailed()).to.be.false;
         expect(res.isValid()).to.be.true;

@@ -16,15 +16,16 @@ describe('dynamic pricing response', function () {
     });
 
     it('is invalid without code', function () {
-        var res = new Dynamic(client, { subscriptionId: 123 });
+        var res = new Dynamic(client, { subscription_id: 123 });
         expect(res.isValid()).to.equal.false;
         expect(res.isSuccessful()).to.equal.false;
     });
 
     it('is invalid with bad code', function () {
         var res = new Dynamic(client, {
-            subscriptionId: 123,
-            responseDigest: 'd41d8cd98f00b204e9800998ecf8427e'
+            subscription_id: 123,
+            responseDigest: 'd41d8cd98f00b204e9800998ecf8427e',
+            denialId: ''
         });
         expect(res.isValid()).to.equal.false;
         expect(res.isSuccessful()).to.equal.false;
@@ -32,8 +33,9 @@ describe('dynamic pricing response', function () {
 
     it('is valid with good code', function () {
         var res = new Dynamic(client, {
-            subscriptionId: 123,
-            responseDigest: '588cb02e280672000bdd5144b9148182'
+            subscription_id: 123,
+            responseDigest: '588cb02e280672000bdd5144b9148182',
+            denialId: ''
         });
         expect(res.isValid()).to.equal.true;
         expect(res.isSuccessful()).to.equal.true;
@@ -41,9 +43,9 @@ describe('dynamic pricing response', function () {
 
     it('is valid with error', function () {
         var res = new Dynamic(client, {
-            subscriptionId: 123,
+            subscription_id: 123,
             denialId: 2,
-            responseDigest: '7396330c6ba8953e267957e1b1fdc7fe'
+            responseDigest: '7396330c6ba8953e267957e1b1fdc7fe',
         });
         expect(res.isValid()).to.equal.true;
         expect(res.isSuccessful()).to.equal.false;
