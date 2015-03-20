@@ -1,6 +1,6 @@
 {
   "name": "ccbill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gateway for CCBill payment processing",
   "main": "lib/index.js",
   "scripts": {
